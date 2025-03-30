@@ -29,7 +29,7 @@ public class venueController {
         return ResponseEntity.ok().body(new ApiResponse<>("Done",venues,OK));
     }
     @GetMapping("/{VenueID}")
-    public ResponseEntity<ApiResponse<Venue>> getVenueById(@PathVariable("VenueID") Integer id) {
+    public ResponseEntity<ApiResponse<Venue>> getVenueById(@PathVariable("VenueID") Long id) {
         Venue venues = venueService.getVenueById(id);
         if (venues == null) {
             throw new NotFoundException("Venue not found");

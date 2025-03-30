@@ -10,7 +10,7 @@ import java.util.List;
 public interface EventService {
     List<Event> getAllEvents(@Positive Integer page, @Positive Integer size);
 
-    Event getEventById(@Positive Integer eventId);
+    Event getEventById(@Positive Long eventId);
 
     Event addEvent(@Valid EventRequest eventRequest);
 

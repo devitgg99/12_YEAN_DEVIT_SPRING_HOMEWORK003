@@ -21,7 +21,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event getEventById(Integer eventId) {
+    public Event getEventById(Long eventId) {
         return eventRepository.getEventById(eventId);
     }
 

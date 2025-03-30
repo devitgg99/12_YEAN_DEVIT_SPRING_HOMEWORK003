@@ -31,7 +31,7 @@ public interface EventRepository {
         Select * from events where event_id = #{eventId}
     """)
     @ResultMap("eventMapper")
-    Event getEventById(Integer eventId);
+    Event getEventById(Long eventId);
 
     @Select("""
         INSERT INTO events (event_id, event_name, event_date, venue_id) 

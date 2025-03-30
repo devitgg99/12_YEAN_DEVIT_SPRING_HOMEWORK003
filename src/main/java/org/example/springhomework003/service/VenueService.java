@@ -10,7 +10,7 @@ public interface VenueService {
 
     List<Venue> getAllVenue(Integer page, Integer size);
 
-    Venue getVenueById(Integer id);
+    Venue getVenueById(Long id);
 
     Venue addVenue(@Valid VenueRequest venueRequest);
 

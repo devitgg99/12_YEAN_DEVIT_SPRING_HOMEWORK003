@@ -23,7 +23,7 @@ public class venueServiceImpl implements VenueService {
     }
 
     @Override
-    public Venue getVenueById(Integer id) {
+    public Venue getVenueById(Long id) {
         return venueRepository.getVenueById(id);
     }
 

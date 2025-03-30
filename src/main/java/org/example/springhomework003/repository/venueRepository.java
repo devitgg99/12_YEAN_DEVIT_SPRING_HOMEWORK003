@@ -25,7 +25,7 @@ public interface venueRepository {
         SELECT * FROM venues WHERE venue_id = #{id}
     """)
     @ResultMap("VenueMapper")
-    Venue getVenueById(Integer id);
+    Venue getVenueById(Long id);
 
     @Select("""
         INSERT INTO venues (venue_id, venue_name, location)\s

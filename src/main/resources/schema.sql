@@ -4,8 +4,6 @@ create table venues(
     location VARCHAR(100) NOT NULL
 )
 
-INSERT INTO venues (venue_id, venue_name, location)
-values (default, 'camp1', 'pp'),(default, 'camp2', 'sr'),(default, 'camp3', 'btb')
 
 create table events (
     event_id SERIAL primary key,
@@ -14,13 +12,7 @@ create table events (
     venue_id INT NOT NULL,
     CONSTRAINT fk_venue foreign key(venue_id) REFERENCES venues (venue_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-INSERT INTO events (event_id, event_name, event_date, venue_id)
-VALUES
-(default, 'Concert', '2025-04-15', 5),
-(default, 'Art Exhibition', '2025-05-20', 7),
-(default, 'Tech Conference', '2025-06-10', 6),
-(default, 'Food Festival', '2025-07-05', 7),
-(default, 'Charity Run', '2025-08-25', 5);
+
 
 create table attendees (
     attendee_id SERIAL PRIMARY KEY,
@@ -28,9 +20,14 @@ create table attendees (
     email VARCHAR(100) NOT NULL
 )
 
-INSERT INTO attendees ( attendee_name , email)
-VALUES ('many','many@gmail.com'),
-       ('roth','roth@gmail.com'),
-       ('relaxsun','relaxsun@gmail.com'),
-       ('enghour','enghour@gmail.com'),
-       ('devit','devit@gmail.com')
+
+
+Create table event_attendee(
+    id SERIAL PRIMARY KEY,
+    event_id INT NOT NULL,
+    attendee_id INT NOT Null,
+    CONSTRAINT fk_event FOREIGN KEY(event_id) REFERENCES events (event_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_attendee FOREIGN KEY(attendee_id) REFERENCES attendees (attendee_id) ON DELETE CASCADE ON UPDATE CASCADE
+)
+
+
